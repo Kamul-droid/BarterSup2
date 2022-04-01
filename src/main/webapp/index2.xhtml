@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html >
+
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h = "http://java.sun.com/jsf/html"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+
+<h:body>
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:co="http://xmlns.jcp.org/jsp/jstl/functions"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+>
+    <ui:define name="content">
+        <h1> POST </h1>
+
+
+
+        <ui:repeat var="post" value="#{BarterService.postList}">
+            <div class="row row-cols-1 row-cols-md-3 g-4"/>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <h:graphicImage styleClass="card-img-top" library="images" name="logo.png"></h:graphicImage>
+
+                    <div class="card-body">
+                        <h5 class="card-title">#{post.title}</h5>
+                        <p class="card-text">#{post.description}</p>
+                        <p class="card-text">#{post.category.type}</p>
+                        <p class="card-text">#{post.date}</p>
+
+                        <h:outputLink value="detail.post">
+                            Details
+                            <f:param name="id" value="#{post.id}"/>
+                        </h:outputLink>
+                    </div>
+                </div>
+            </div>
+
+        </ui:repeat>
+    </ui:define>
+</ui:composition>
+
+</h:body>
+</html>

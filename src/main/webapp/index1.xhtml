@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: kam
+  Date: 22/03/2022
+  Time: 01:32
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsp/jstl/core" >
+
+<h:head>
+    <title>Title</title>
+</h:head>
+
+<h:body>
+    <h1>main</h1>
+    <ui:if test="!(session.getAttribute('name') ==null || session.getAttribute('name') =='')">
+    String name = (String) session.getAttribute("name");
+    User user = (User) session.getAttribute("user");
+
+    out.println(" Vous êtes connecté en tant que "+name);
+    out.println(" Vous avez le role "+user.getRole());
+
+    </ui:if>
+    <h:link value="login" outcome="login.jsp"/>
+    <a href="http://localhost:8080/BarterSup-1.0-SNAPSHOT/in.log">go to login</a>
+    <a href="http://localhost:8080/BarterSup-1.0-SNAPSHOT/index.xhtml">home</a>
+    <a href="http://localhost:8080/BarterSup-1.0-SNAPSHOT/out.log">go to logout</a>
+
+
+</h:body>
+
+</html>

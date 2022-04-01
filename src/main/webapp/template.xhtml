@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+>
+
+<!--<f:loadBundle basename="com.jee.bartersup.ressources.message" var="msg" />-->
+<h:head>
+    <title></title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="Anil z" name="author"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="barter"/>
+    <meta name="keywords" content="trade"/>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"/>
+    <!-- Animation CSS -->
+    <h:outputStylesheet library="css" name="animate.css"></h:outputStylesheet>
+<!--    <link rel="stylesheet" href="css/animate.css"/>-->
+    <!-- Latest Bootstrap min CSS -->
+    <h:outputStylesheet library="css" name="bootstrap/css/bootstrap.min.css"></h:outputStylesheet>
+<!--    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>-->
+    <h:outputStylesheet library="css" name="bootstrap/css/cookieconsent.css"></h:outputStylesheet>
+<!--    <link rel="stylecookie" href="bootstrap/css/cookieconsent.css"/>-->
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet"/>
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="css/ionicons.min.css"/>
+    <h:outputStylesheet library="css" name="ionicons.min.css"></h:outputStylesheet>
+    <!-- FontAwesome CSS -->
+<!--    <link rel="stylesheet" href="css/all.min.css"/>-->
+    <h:outputStylesheet library="css" name="all.min.css"></h:outputStylesheet>
+    <!-- Flaticon Font CSS -->
+    <link rel="stylesheet" href="css/flaticon.css"/>
+<!--    <h:outputStylesheet library="css" name="flaticon.css"></h:outputStylesheet>-->
+    <!-- Themify Font CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css"/>
+    <h:outputStylesheet library="css" name="themify-icons.css"></h:outputStylesheet>
+
+    <!--- owl carousel CSS-->
+<!--    <link rel="stylesheet" href="owlcarousel/css/owl.carousel.min.css"/>-->
+    <h:outputStylesheet library="css" name="owlcarousel/css/owl.carousel.min.css"></h:outputStylesheet>
+
+<!--    <link rel="stylesheet" href="css/owlcarousel/css/owl.theme.css"/>-->
+    <h:outputStylesheet library="css" name="owlcarousel/css/owl.theme.css"></h:outputStylesheet>
+
+<!--    <link rel="stylesheet" href="css/owlcarousel/css/owl.theme.default.min.css"/>-->
+    <h:outputStylesheet library="css" name="owlcarousel/css/owl.theme.default.min.css"></h:outputStylesheet>
+
+    <!-- Magnific Popup CSS -->
+<!--    <link rel="stylesheet" href="css/magnific-popup.css"/>-->
+    <h:outputStylesheet library="css" name="magnific-popup.css"></h:outputStylesheet>
+
+    <!-- jquery-ui CSS -->
+<!--    <link rel="stylesheet" href="css/jquery-ui.css"/>-->
+    <h:outputStylesheet library="css" name="jquery-ui.css"></h:outputStylesheet>
+
+    <!-- Style CSS -->
+<!--    <link rel="stylesheet" href="css/style.css"/>-->
+    <h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+<!--    <link rel="stylesheet" href="css/responsive.css"/>-->
+    <h:outputStylesheet library="css" name="responsive.css"></h:outputStylesheet>
+
+<!--    <link rel="stylesheet" id="layoutstyle" href="css/color/theme-bluelight.css"/>-->
+    <h:outputStylesheet library="css" name="color/theme-green.css"></h:outputStylesheet>
+
+
+</h:head>
+
+
+<h:body >
+  <header class="header_wrap dark_skin main_menu_uppercase main_menu_weight_600 menu_style1">
+        <div class="top-header bg_dark light_skin">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <ul class="contact_detail list_none text-center text-md-left">
+                            <li><i class="ti-mobile"></i><span>+00000000000</span></li>
+                            <li><i class="ti-location-pin"></i><span>Supinfo</span></li>
+                        </ul>
+                    </div>
+                        <div class="col-md-4">
+                            <ul class="list_none social_icons text-center social_white text-md-right mt-2 mt-md-0">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+               <h:link class="navbar-brand" value="" outcome="index">
+                    <h:graphicImage   library="images" name="logo.png" alt="logo" styleClass="logo_dark"/>
+                   <h:graphicImage   library="images" name="logo.png" alt="logo" styleClass="logo_default"/>
+               </h:link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <li>
+                            <h:link styleClass="nav-link active" outcome="index" value="Accueil"></h:link>
+                        </li>
+
+
+                        <li>
+                            <h:link styleClass="nav-link " outcome="about" value="Qui sommes-nous"></h:link>
+
+                        </li>
+                        <li>
+                            <h:link styleClass="nav-link " outcome="contact" value="Contact"></h:link>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Compte</a>
+                            <div class="dropdown-menu">
+                                <ul>
+
+                                    <c:if test="#{not empty user}">
+
+
+                                        <li>
+                                            <a class=" nav-link nav_item " href="PROFILE ">PROFILE</a>
+                                        </li>
+                                        <li>
+                                            <a class=" nav-link nav_item " href="">POST  </a>
+                                        </li>
+                                        <li>
+                                            <a class="ndropdown-item nav-link nav_item " href="../logout.jsp">DECONNEXION</a>
+                                        </li>
+
+                                    </c:if>
+                                    <c:if test="#{empty user}">
+                                        <li>
+                                            <h:outputLink styleClass="dropdown-item nav-link nav_item" value="in.log">CONNEXION</h:outputLink>
+
+                                        </li>
+
+                                    </c:if>
+
+
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+<!--                <ul class="navbar-nav attr-nav align-items-center">-->
+
+
+
+<!--                </ul>-->
+            </nav>
+        </div>
+    </header>
+
+<!--    <h:graphicImage library="images" name="img.jpg"></h:graphicImage>-->
+<!--    <img src="images/img.jpg"></img>-->
+    <ui:insert name="content">
+
+    </ui:insert>
+    <footer class="footer_dark background_bg overlay_bg_80" data-img-src="images/b7.jpg ">
+        <div class="top_footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-7">
+                        <div class="footer_logo">
+                            <h:link value="" outcome="index">
+                                <h:graphicImage library="images" styleClass="nav-link" name="logo.png" alt="logo"/>
+                            </h:link>
+
+                        </div>
+                        <div class="footer_desc">
+                            <p> Echangez sans pression! </p>
+                            <ul class="contact_info list_none">
+                                <li>
+                                    <span class="fa fa-map-marker-alt "></span>
+                                    <address>Supinfo </address>
+                                </li>
+                                <li>
+                                    <span class="fa fa-mobile-alt" id="num"></span>
+                                    <p>+33(0)0000000000000000</p>
+                                </li>
+                                <li>
+                                    <span class="fa fa-envelope" id="info"></span>
+                                    <a href="mailto:info@gmail.com">notre address</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-5">
+                        <h5 class="widget_title3"> Accès Rapide </h5>
+                        <ul class="list_none widget_links links_style2">
+                            <li><a href="  index  #vib-contact"> Rejoignez-Nous </a></li>
+                            <li><a href="  about  "> Qui sommes-nous </a></li>
+                            <li><a href="#equip"> Outils</a></li>
+                            <li><a href="#info"> Retour </a></li>
+                            <li><a href="  contact  "> Centre d'Aide </a></li>
+                            <li><a href="  contact  "> Contact </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-7">
+                        <h5 class="widget_title3"> Dernier Ajout </h5>
+                        <ul class="recent_post border_bottom_dash list_none">
+                            <li>
+                                <div class="post_footer">
+                                    <div class="post_content">
+                                        <h6><a href="#"> Vous voulez faire du trade ?  </a></h6>
+                                        <span class="post_date"><i class="ion-android-time"></i>  mars 2, 2022  </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_footer">
+                                    <div class="post_content">
+                                        <h6><a href="#">Premier site de trade</a></h6>
+                                        <span class="post_date"><i class="ion-android-time"></i> Avril 2, 2022 </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="bottom_footer border_top_transparent">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p class="copyright m-md-0 text-center text-md-left">Copyright © 2022 - Supbartering</p>
+                            </div>
+                            <div class="col-md-5">
+                                <ul class="list_none footer_link text-center text-md-right">
+                                    <li><a href="politique "> Conditions Générales d'Utilisation </a></li>
+                                    <li><a href="confidentialite">  Politiques de Confidentialités </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <h:outputScript library="js" name="cookieconsent.js"/>
+
+    <h:outputScript library="js" name="scriptcookie.js"/>
+
+    <h:outputScript library="js" name="jquery-1.12.4.min.js"/>
+
+    <!-- jquery-ui js -->
+
+    <h:outputScript library="js" name="jquery-ui.js"/>
+    <!-- popper min js -->
+
+    <h:outputScript library="js" name="popper.min.js"/>
+    <!-- Latest compiled and minified Bootstrap -->
+
+<h:outputScript library="js" name="bootstrap.min.js"/>
+    <!-- owl-carousel min js  -->
+
+    <h:outputScript library="js" name="owl.carousel.min.js"/>
+    <!-- magnific-popup min js  -->
+
+    <h:outputScript library="js" name="magnific-popup.min.js"/>
+    <!-- waypoints min js  -->
+    <h:outputScript library="js" name="waypoints.min.js"/>
+    <!-- parallax js  -->
+    <h:outputScript library="js" name="parallax.js"/>
+
+<!--     jquery dd js  -->
+    <h:outputScript library="js" name="jquery.dd.min.js"/>
+    <!-- countdown js  -->
+
+    <h:outputScript library="js" name="jquery.countdown.min.js"/>
+
+    <!-- jquery.counterup.min js -->
+    <h:outputScript library="js" name="jquery.counterup.min.js"/>
+    <!-- jquery.parallax-scroll js -->
+    <h:outputScript library="js" name="jquery.parallax-scroll.js"/>
+
+    <!-- fit video  -->
+<!--    <script src="js/jquery.fitvids.js"></script>-->
+    <h:outputScript library="js" name="jquery.fitvids.js"/>
+    <!-- imagesloaded js -->
+<!--    <script src="js/imagesloaded.pkgd.min.js"></script>-->
+    <h:outputScript library="js" name="imagesloaded.pkgd.min.js"/>
+
+    <!-- isotope min js -->
+<!--    <script src="js/isotope.min.js"></script>-->
+    <h:outputScript library="js" name="isotope.min.js"/>
+    <!-- cookie js -->
+<!--    <script src="js/js.cookie.js"></script>-->
+    <h:outputScript library="js" name="js.cookie.js"/>
+    <!-- scripts js -->
+<!--    <script src="js/scripts.js"></script>-->
+    <h:outputScript library="js" name="scripts.js"/>
+<!--    <script src="js/image.js"></script>-->
+    <h:outputScript library="js" name="image.js"/>
+</h:body>
+
+</html>
