@@ -1,6 +1,7 @@
 package com.jee.bartersup.dao;
 
 import com.jee.bartersup.entity.Post;
+import com.jee.bartersup.entity.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.Entity;
@@ -60,5 +61,11 @@ public class PostDao implements PostIDao{
     @Override
     public String getPostByImage(Post post) {
         return null;
+    }
+
+    @Override
+    public Long findUser(Integer id) {
+        Post p = (Post) entityManager.createQuery("select p from  Post p where p.id =?1").setParameter(1,id).getSingleResult();
+        return p.getUser().getId();
     }
 }

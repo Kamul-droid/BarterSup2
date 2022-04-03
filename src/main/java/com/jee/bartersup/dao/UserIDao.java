@@ -15,4 +15,5 @@ public interface UserIDao {
     void updateUser(User user);
     void deleteUser(User user);
     List<User> findAll();
+    boolean authUserHash(String email, byte[] password);
 }

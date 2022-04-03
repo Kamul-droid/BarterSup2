@@ -1,15 +1,24 @@
 package com.jee.bartersup.services;
 
 import com.jee.bartersup.entity.Post;
+import sun.security.validator.ValidatorException;
 
 
+import javax.annotation.ManagedBean;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-@RequestScoped
+
+@SessionScoped
+@ManagedBean
 @Named("userForm")
-public class UserFormBean {
+public class UserFormBean implements Serializable {
 
     private Long id;
 
@@ -138,4 +147,10 @@ public class UserFormBean {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+
+
+
+
+
+
 }

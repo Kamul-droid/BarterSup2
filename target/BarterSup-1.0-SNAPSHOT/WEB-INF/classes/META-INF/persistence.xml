@@ -6,7 +6,7 @@
     <persistence-unit name="default">
         <jta-data-source>java:/barterSupI</jta-data-source>
         <properties>
-        <property name="hibernate.hbm2ddl.auto" value="update"/>
+        <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
 </persistence>

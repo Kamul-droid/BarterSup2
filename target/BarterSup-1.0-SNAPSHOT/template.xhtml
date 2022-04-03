@@ -128,19 +128,30 @@
 
 
                                         <li>
-                                            <a class=" nav-link nav_item " href="PROFILE ">PROFILE</a>
+
+                                            <h:link styleClass="nav-link nav-item" outcome="profil" value="Profil"></h:link>
+
                                         </li>
                                         <li>
-                                            <a class=" nav-link nav_item " href="">POST  </a>
+
+                                            <h:link styleClass="nav-link nav_item " outcome="post" value="Nouveau Post"></h:link>
+
                                         </li>
                                         <li>
-                                            <a class="ndropdown-item nav-link nav_item " href="../logout.jsp">DECONNEXION</a>
+
+                                            <h:outputLink styleClass="nav-link nav_item" value="out.log">Deconnexion</h:outputLink>
+
+
                                         </li>
 
                                     </c:if>
                                     <c:if test="#{empty user}">
                                         <li>
                                             <h:outputLink styleClass="dropdown-item nav-link nav_item" value="in.log">CONNEXION</h:outputLink>
+
+                                        </li>
+                                        <li>
+                                            <h:outputLink styleClass="dropdown-item nav-link nav_item" value="user.register">REGISTER</h:outputLink>
 
                                         </li>
 

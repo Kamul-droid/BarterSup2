@@ -4,42 +4,47 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<ui:composition template="WEB-INF/template.xhtml">
+<ui:composition template="template.xhtml">
     <ui:insert name="pageHeader">#{msg['form.pageTitle']}</ui:insert>
-    <ui:define name="body">
+    <ui:define name="content">
         <h:form method="post"  action="register">
             <div>
-               <h:outputLabel value="Username"/>
-            <h:inputText value="#{userForm.username}"/>
-<!--                    <f:validateRegex pattern="[A-Za-z0-9]+"></f:validateRegex>-->
+                <h:outputLabel for="userName" value="Username"/>
+                <h:inputText id="userName" value="#{userForm.username}" required="true" requiredMessage="Username is required"/>
+            <!--<f:validateRegex pattern="[A-Za-z0-9]+"></f:validateRegex>-->
                 <br/>
-                <h:outputLabel value="firstname"/>
-                <h:inputText value="#{userForm.firstname}"/>
+                <h:outputLabel for="firstName" value="firstname"/>
+                <h:inputText id="firstName" value="#{userForm.firstname}" required="true" requiredMessage="First name is required"/>
                 <br/>
 
-                <h:outputLabel value="lastname"/>
-                <h:inputText value="#{userForm.lastname}"/>
+                <h:outputLabel for="lastName" value="lastname"/>
+                <h:inputText id="lastName" value="#{userForm.lastname}" required="true" requiredMessage="Last name is required"/>
                 <br/>
-                <h:outputLabel value="password"/>
-                <h:inputSecret value="#{userForm.password}"/>
+                <h:outputLabel for="password" value="password"/>
+                <h:inputSecret id="password" value="#{userForm.password}" required="true" requiredMessage="Password is required" validatorMessage="Password is too short">
+                    <f:validateLength for="password" minimum="8"></f:validateLength>
+                </h:inputSecret>
                 <br/>
-                <h:outputLabel value="zip code"/>
-                <h:inputText styleClass="color-bar" value="#{userForm.zipcode}"/>
-<!--                    <f:convertNumber integerOnly="true" type="number"/>-->
-                <br/><h:outputLabel value="address"/>
-                <h:inputText value="#{userForm.address}"/>
+                <h:outputLabel for="zip" value="zip code"/>
+                <h:inputText id="zip" styleClass="color-bar" value="#{userForm.zipcode}" required="true" requiredMessage="Zipcode is required" validatorMessage="Zipcode is not valid">
+                    <f:validateLength for="zip" minimum="4"></f:validateLength>
+                </h:inputText>
+                <!--<f:convertNumber integerOnly="true" type="number"/>-->
+                <br/><h:outputLabel for="address" value="address"/>
+                <h:inputText id="address" value="#{userForm.address}" required="true" requiredMessage="Adress is required" validatorMessage="Adress is not valid">
+                    <f:validateLength for="address" minimum="12"></f:validateLength>
+                </h:inputText>
                 <br/>
                 <h:outputLabel value="RGPD"/>
                 <h:selectBooleanCheckbox style="" styleClass="" value="#{userForm.rgpd}"/>
                 <br/>
-                <h:outputLabel value="email"/>
-                <h:inputText style="" styleClass="check-box" value="#{userForm.email}"/>
-             <br/>
+                <h:outputLabel for="mail" value="email"/>
+                <h:inputText id="mail" style="" styleClass="check-box" value="#{userForm.email}" required="true" requiredMessage="Mail is required" validatorMessage="Mail is not valid">
+                    <f:validateRegex pattern="/^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/gm"></f:validateRegex>
+                </h:inputText>
+                <br/>
 
                 <h:commandButton  value="Submit" action="useraccount"/>
-
-
-
 
             </div>
         </h:form>

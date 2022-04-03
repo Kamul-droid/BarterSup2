@@ -16,9 +16,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@Named("register")
+@Named
 @SessionScoped
-@WebServlet(name = "register",value ="reg" ,urlPatterns =  "*.register")
+@WebServlet(name = "registeruser",value ="reg" ,urlPatterns =  "*.register")
 public class Register extends HttpServlet {
 
 
@@ -46,7 +46,7 @@ public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("usermodel",new User());
-        request.getRequestDispatcher("/testimage.jsp").forward(request,response);
+        request.getRequestDispatcher("register.xhtml").forward(request,response);
 
     }
 
@@ -123,6 +123,8 @@ public class Register extends HttpServlet {
 
 
     }
+
+
 
 
 }

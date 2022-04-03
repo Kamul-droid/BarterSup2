@@ -15,5 +15,6 @@ public interface PostIDao {
     void deletePost(Post post);
     List<Post> findAll();
     String getPostByImage(Post post);
+    Long findUser(Integer id);
 
 }

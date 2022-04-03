@@ -44,7 +44,7 @@ public class ServletPost extends HttpServlet {
     private ImageIDaoLocal imageIDao;
 
 
-    private  final String UPLOAD_DIRECTORY ="C:\\Users\\kam\\Documents\\BarterSup\\src\\main\\webapp\\picture";
+    private  final String UPLOAD_DIRECTORY ="C:\\Users\\kam\\Documents\\BarterSup\\src\\main\\webapp\\images";
 
 
     private Category category = new Category();
@@ -158,7 +158,7 @@ public class ServletPost extends HttpServlet {
                     for (FileItem item : multiparts){
                         if (!item.isFormField()){
                             String name = new File(item.getName()).getName();
-                            //System.out.println("file name "+name);
+                            System.out.println("file name "+name);
                             String trsf ="";
                             String[] strings = name.split(" ");
                             for (String str: strings
@@ -167,12 +167,15 @@ public class ServletPost extends HttpServlet {
                             }
                             System.out.println("trddd " + trsf);
                             item.write(new File(UPLOAD_DIRECTORY+File.separator+trsf));
-                            image.setLink(UPLOAD_DIRECTORY+File.separator+trsf);
+                            image.setLink(name);
 
 
                             //
 //
                             imageIDao.addPicture(image);
+                            pst.setImage(image);
+                            postIDao.updatePost(pst);
+
                             System.out.println("directory name "+UPLOAD_DIRECTORY+ FileSystems.getDefault().getSeparator()+trsf);
 
                         }

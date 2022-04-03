@@ -30,6 +30,9 @@ public class Post  implements Serializable {
     @Column(name = "created_at", nullable = false)
     private Date date;
 
+    @OneToOne(cascade = CascadeType.MERGE )
+    @JoinColumn (name = "image_id", nullable = true)
+    private Image image;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id", nullable = false)
@@ -103,6 +106,14 @@ public class Post  implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     @Override

@@ -31,6 +31,9 @@ public class User implements Serializable {
     @Column(name = "password",nullable = false)
     private String password;
 
+    @Column(name = "hash", nullable = true)
+    private byte[] hashpassword;
+
 
     @Column(name = "zip_code",nullable = false)
     private String zipcode;
@@ -60,10 +63,6 @@ public class User implements Serializable {
         this.posts = posts;
     }
 
-//    @OneToMany()
-//    @JoinColumn(name = "post_id")
-//    private List<Post> post;
-//
 
 
 
@@ -164,6 +163,14 @@ public class User implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public byte[] getHashpassword() {
+        return hashpassword;
+    }
+
+    public void setHashpassword(byte[] hashpassword) {
+        this.hashpassword = hashpassword;
     }
 
     @Override

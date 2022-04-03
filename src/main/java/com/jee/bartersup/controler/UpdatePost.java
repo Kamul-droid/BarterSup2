@@ -5,12 +5,11 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ServletLogout", value = "loginl",urlPatterns = "lolgg")
-public class ServletLogout extends HttpServlet {
+@WebServlet(name = "UpdatePost", value = "/UpdatePost", urlPatterns = "updatepost/*")
+public class UpdatePost extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("login.jsp").forward(request,response);
-
+        request.getRequestDispatcher("update").forward(request,response);
     }
 
     @Override

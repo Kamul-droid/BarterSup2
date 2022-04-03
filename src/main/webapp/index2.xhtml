@@ -24,7 +24,8 @@
             <div class="row row-cols-1 row-cols-md-3 g-4"/>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <h:graphicImage styleClass="card-img-top" library="images" name="logo.png"></h:graphicImage>
+                    <h:graphicImage styleClass="card-img-top" library="images" name="#{post.image.link}" alt="#{post.image.link}"></h:graphicImage>
+<!--                    <h:graphicImage styleClass="card-img-top" library="images" name="" alt="#{post.image.link}"></h:graphicImage>-->
 
                     <div class="card-body">
                         <h5 class="card-title">#{post.title}</h5>
@@ -32,7 +33,7 @@
                         <p class="card-text">#{post.category.type}</p>
                         <p class="card-text">#{post.date}</p>
 
-                        <h:outputLink value="detail.post">
+                        <h:outputLink value="detailpost">
                             Details
                             <f:param name="id" value="#{post.id}"/>
                         </h:outputLink>

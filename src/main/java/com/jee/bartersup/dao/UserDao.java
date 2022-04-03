@@ -77,4 +77,15 @@ public class UserDao implements UserIDao {
 
         return data;
     }
+    @Override
+    public boolean authUserHash(String email, byte[] password){
+        int count = 0, count1 = 0;
+        count =  entityManager.createQuery("select u from User u where u.email =?1 and u.hashpassword =?2").setParameter(1,email).setParameter(2,password).getResultList().size();
+//        count1 =  entityManager.createQuery("select u from User u where  u.hashpassword = ?1").setParameter(1, password).getResultList().size();
+
+        if (count != 0){
+            return true;
+        }
+        return false;
+    }
 }
